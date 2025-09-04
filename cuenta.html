@@ -1,0 +1,69 @@
+<!-- ===================== cuenta.html ===================== -->
+<label for="reg-email">Correo electrónico</label>
+<input id="reg-email" type="email" name="email" required placeholder="tucorreo@email.com" />
+</div>
+<div>
+<label for="reg-username">Nombre de usuario</label>
+<input id="reg-username" type="text" name="username" minlength="3" maxlength="24" required placeholder="ej. JuanFutbol" />
+</div>
+</div>
+<div class="row">
+<div>
+<label for="reg-password">Contraseña</label>
+<input id="reg-password" type="password" name="password" minlength="6" required placeholder="••••••" />
+</div>
+<div>
+<label for="reg-dob">Fecha de nacimiento</label>
+<input id="reg-dob" type="date" name="dob" required />
+</div>
+</div>
+<div class="hint">Al continuar aceptas nuestros términos. (Placeholder — sin backend aún).</div>
+<div class="error" id="reg-error" aria-live="polite"></div>
+<button class="btn" type="submit">Crear cuenta</button>
+<a class="back" href="index.html">← Volver al inicio</a>
+</form>
+
+
+<!-- Login -->
+<form id="panel-iniciar" role="tabpanel" aria-labelledby="tab-iniciar" hidden>
+<div>
+<label for="login-email">Correo electrónico</label>
+<input id="login-email" type="email" name="email" required placeholder="tucorreo@email.com" />
+</div>
+<div>
+<label for="login-password">Contraseña</label>
+<input id="login-password" type="password" name="password" required placeholder="••••••" />
+</div>
+<div class="error" id="login-error" aria-live="polite"></div>
+<button class="btn" type="submit">Iniciar sesión</button>
+<a class="back" href="index.html">← Volver al inicio</a>
+</form>
+</div>
+</div>
+</div>
+
+
+<script>
+// Tabs
+const tabRegistrar = document.getElementById('tab-registrar');
+const tabIniciar = document.getElementById('tab-iniciar');
+const panelRegistrar = document.getElementById('panel-registrar');
+const panelIniciar = document.getElementById('panel-iniciar');
+
+
+function setTab(which){
+const isReg = which === 'reg';
+tabRegistrar.classList.toggle('active', isReg);
+tabIniciar.classList.toggle('active', !isReg);
+panelRegistrar.hidden = !isReg;
+panelIniciar.hidden = isReg;
+if(!isReg) location.hash = '#iniciar'; else history.replaceState(null, '', ' ');
+}
+
+
+tabRegistrar.addEventListener('click', ()=> setTab('reg'));
+tabIniciar.addEventListener('click', ()=> setTab('login'));
+if(location.hash === '#iniciar') setTab('login');
+
+
+// Edad mínima
