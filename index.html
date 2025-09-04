@@ -1,153 +1,67 @@
-<!-- ===================== index.html ===================== -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FUTBET</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #111;
-      color: #fff;
-    }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FUTBET — Juega y gana recompensas</title>
+<meta name="description" content="FUTBET: encuentra rivales, crea alianzas y lleva el historial de tus partidos." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root {
+--bg-dark: #0b0f17;
+--text: #ffffff;
+--muted: #c9d1d9;
+--card: rgba(255,255,255,0.08);
+--card-border: rgba(255,255,255,0.12);
+--accent: #00e5a8;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+margin: 0;
+font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+color: var(--text);
+background: var(--bg-dark);
+}
+a { color: inherit; text-decoration: none; }
+/* Header */
+.header {
+position: sticky; top: 0; z-index: 50;
+backdrop-filter: saturate(140%) blur(8px);
+background: rgba(11,15,23,0.6);
+border-bottom: 1px solid var(--card-border);
+}
+.nav {
+max-width: 1100px; margin: 0 auto; height: 64px;
+display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 16px;
+padding: 0 16px;
+}
+.logo { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: .5px; }
+.logo-mark { width: 28px; height: 28px; border-radius: 8px; background: linear-gradient(135deg,#00e5a8,#2dd4bf); display: grid; place-items: center; font-size: 18px; color:#0b0f17; font-weight: 900; }
+.menu { display: flex; gap: 16px; justify-self: center; }
+.menu a { padding: 8px 10px; border-radius: 10px; color: var(--muted); font-weight: 600; }
+.menu a:hover { color: var(--text); background: var(--card); }
+.auth { justify-self: end; display: flex; gap: 8px; }
+.btn {
+padding: 10px 14px; border-radius: 12px; border: 1px solid var(--card-border);
+background: #fff; color: #000; font-weight: 700; transition: .2s ease-in-out; cursor: pointer;
+}
+.btn:hover { background: transparent; color: #fff; }
+.btn-outline { background: transparent; color: #fff; }
+.btn-outline:hover { background: #fff; color: #000; }
 
-    /* Barra superior */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 30px;
-      background: #222;
-      position: sticky;
-      top: 0;
-    }
-    header h1 { margin: 0; }
-    nav a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #fff;
-    }
-    .btn-auth {
-      background: #fff;
-      color: #000;
-      padding: 8px 15px;
-      border-radius: 5px;
-      text-decoration: none;
-    }
 
-    /* Hero */
-    #hero {
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-                  url("img/fondo.jpg") center/cover no-repeat;
-      height: 90vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-    #hero h2 {
-      font-size: 3rem;
-      margin: 0 0 20px;
-    }
-
-    /* Sección de botones */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 50px;
-    }
-    .card {
-      background: #fff;
-      color: #000;
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-      transition: 0.3s;
-    }
-    .card button {
-      margin-top: 10px;
-      padding: 10px 20px;
-      background: #fff;
-      color: #000;
-      border: 1px solid #000;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    .card button:hover {
-      background: #000;
-      color: #fff;
-    }
-
-    /* Quienes somos */
-    #about {
-      padding: 50px;
-      text-align: center;
-    }
-
-    /* Footer */
-    footer {
-      background: #222;
-      padding: 20px;
-      text-align: center;
-      font-size: 0.9rem;
-    }
-    footer a { color: #fff; }
-  </style>
-</head>
-<body>
-
-  <header>
-    <h1>FUTBET</h1>
-    <nav>
-      <a href="#">Inicio</a>
-      <a href="#">Alianzas</a>
-      <a href="#">Historial</a>
-    </nav>
-    <a href="cuenta.html" class="btn-auth">Crear cuenta / Iniciar sesión</a>
-  </header>
-
-  <section id="hero">
-    <h2>Bienvenido a FUTBET</h2>
-    <p>¡Juega, compite y gana recompensas!</p>
-  </section>
-
-  <section class="features">
-    <div class="card">
-      <h3>Buscar rival</h3>
-      <p>Encuentra rápidamente a tu oponente.</p>
-      <button>Ir</button>
-    </div>
-    <div class="card">
-      <h3>Alianzas</h3>
-      <p>Crea equipos y alianzas con otros jugadores.</p>
-      <button>Ir</button>
-    </div>
-    <div class="card">
-      <h3>Historial de partidos</h3>
-      <p>Consulta tus partidos jugados y estadísticas.</p>
-      <button>Ir</button>
-    </div>
-  </section>
-
-  <section id="about">
-    <h2>¿Quiénes somos?</h2>
-    <p>Somos un pequeño grupo de emprendedores apasionados al fútbol. 
-       Queremos que nuestros usuarios puedan jugar partidos contra otros equipos 
-       y ganar recompensas. ¿Qué esperas para jugar con FUTBET?</p>
-  </section>
-
-  <footer>
-    FUTBET © 2025 | Síguenos en 
-    <a href="https://www.roblox.com/es/home" target="_blank">Roblox</a>
-  </footer>
-
-</body>
+/* Hero */
+.hero {
+position: relative; min-height: 70vh; display: grid; place-items: center; text-align: center; padding: 48px 16px;
+background: url('https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+}
+.hero::after {
+content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,.45), rgba(11,15,23,.92));
+}
+.hero-inner { position: relative; z-index: 1; max-width: 900px; }
+.hero h1 { margin: 0 0 12px; font-size: clamp(34px, 6vw, 64px); line-height: 1.05; color: #fff; font-weight: 800; }
+.hero p { margin: 0; font-size: clamp(16px, 2.8vw, 22px); color: #e5e7eb; }
 </html>
-
-
-
-  
