@@ -1,0 +1,63 @@
+<!-- ===================== index.html ===================== -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FUTBET — Juega y gana recompensas</title>
+<meta name="description" content="FUTBET: encuentra rivales, crea alianzas y lleva el historial de tus partidos." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root {
+--bg-dark: #0b0f17;
+--text: #ffffff;
+--muted: #c9d1d9;
+--card: rgba(255,255,255,0.08);
+--card-border: rgba(255,255,255,0.12);
+--accent: #00e5a8;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+margin: 0;
+font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+color: var(--text);
+background: var(--bg-dark);
+}
+a { color: inherit; text-decoration: none; }
+/* Header */
+.header {
+position: sticky; top: 0; z-index: 50;
+backdrop-filter: saturate(140%) blur(8px);
+background: rgba(11,15,23,0.6);
+border-bottom: 1px solid var(--card-border);
+}
+.nav {
+max-width: 1100px; margin: 0 auto; height: 64px;
+display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 16px;
+padding: 0 16px;
+}
+.logo { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: .5px; }
+.logo-mark { width: 28px; height: 28px; border-radius: 8px; background: linear-gradient(135deg,#00e5a8,#2dd4bf); display: grid; place-items: center; font-size: 18px; color:#0b0f17; font-weight: 900; }
+.menu { display: flex; gap: 16px; justify-self: center; }
+.menu a { padding: 8px 10px; border-radius: 10px; color: var(--muted); font-weight: 600; }
+.menu a:hover { color: var(--text); background: var(--card); }
+.auth { justify-self: end; display: flex; gap: 8px; }
+.btn {
+padding: 10px 14px; border-radius: 12px; border: 1px solid var(--card-border);
+background: #fff; color: #000; font-weight: 700; transition: .2s ease-in-out; cursor: pointer;
+}
+.btn:hover { background: transparent; color: #fff; }
+.btn-outline { background: transparent; color: #fff; }
+.btn-outline:hover { background: #fff; color: #000; }
+
+
+/* Hero */
+.hero {
+position: relative; min-height: 70vh; display: grid; place-items: center; text-align: center; padding: 48px 16px;
+background: url('https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+}
+.hero::after {
+</html>
